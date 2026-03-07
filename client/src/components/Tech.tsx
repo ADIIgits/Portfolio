@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { TechnologiesListResponse } from "@shared/routes";
+import type { Technology } from "@/types";
 
-export function Tech({ technologies }: { technologies: TechnologiesListResponse }) {
+export function Tech({ technologies }: { technologies: Technology[] }) {
   // Group by category
   const grouped = technologies.reduce((acc, tech) => {
     if (!acc[tech.category]) acc[tech.category] = [];
     acc[tech.category].push(tech);
     return acc;
-  }, {} as Record<string, typeof technologies>);
+  }, {} as Record<string, Technology[]>);
 
   const container = {
     hidden: { opacity: 0 },

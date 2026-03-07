@@ -1,0 +1,89 @@
+The UI of the portfolio is great, but the project is overengineered. I do NOT want a backend or database.
+
+Refactor the project to be a **frontend-only application**.
+
+Requirements:
+
+1. Remove all backend and database related code.
+
+   * Delete the entire `server/` folder.
+   * Remove PostgreSQL, Drizzle ORM, migrations, and database configuration.
+   * Remove any usage of `DATABASE_URL`.
+   * Remove API routes and Express server.
+   * Remove dependencies related to backend and database from package.json.
+
+2. Convert the project into a **pure frontend React + Vite application**.
+
+3. Instead of using a database, store all content in **hardcoded JSON-style objects**.
+
+Create a structured data layer inside:
+
+src/data/
+
+Example files:
+
+src/data/profile.ts
+src/data/projects.ts
+src/data/technologies.ts
+src/data/experience.ts
+
+Each file should export structured objects or arrays.
+
+Example structure:
+
+export const projects = [
+{
+title: "Project Name",
+description: "Short description of the project",
+techStack: ["React", "Node.js", "MongoDB"],
+github: "",
+live: "",
+image: "",
+featured: true
+}
+]
+
+Components should dynamically render content by **mapping over these objects**.
+
+Example usage:
+
+projects.map(project => ( <ProjectCard
+ title={project.title}
+ description={project.description}
+ techStack={project.techStack}
+/>
+))
+
+4. Ensure the UI design remains unchanged:
+
+   * Cinematic Apple-style design
+   * Dark theme
+   * Glassmorphism
+   * Smooth animations
+   * Framer Motion effects
+   * Tailwind styling
+
+5. Update all components so they read data from the objects instead of APIs.
+
+6. Final project structure should look like:
+
+src/
+components/
+sections/
+data/
+profile.ts
+projects.ts
+technologies.ts
+experience.ts
+App.tsx
+main.tsx
+
+7. The project should run with a single command:
+
+npm install
+npm run dev
+
+No backend services should be required.
+
+Goal:
+Keep the beautiful cinematic UI but simplify the architecture so the portfolio is a clean frontend-only project where all content can be edited by modifying structured objects in the data folder.

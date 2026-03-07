@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { ExperiencesListResponse } from "@shared/routes";
+import type { Experience } from "@/types";
 
-export function Experience({ experiences }: { experiences: ExperiencesListResponse }) {
-  // Sort by start date roughly (assuming format allows it, or just display as provided)
+export function Experience({ experiences }: { experiences: Experience[] }) {
   return (
     <section id="experience" className="py-32 px-4 sm:px-8 lg:px-16 bg-white/[0.01] border-y border-white/5">
       <div className="max-w-4xl mx-auto">

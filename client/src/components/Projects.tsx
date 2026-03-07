@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
-import { ProjectsListResponse } from "@shared/routes";
 import { useRef } from "react";
+import type { Project } from "@/types";
 
-function ProjectCard({ project, index }: { project: ProjectsListResponse[0], index: number }) {
+function ProjectCard({ project, index }: { project: Project, index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -68,7 +68,7 @@ function ProjectCard({ project, index }: { project: ProjectsListResponse[0], ind
   );
 }
 
-export function Projects({ projects }: { projects: ProjectsListResponse }) {
+export function Projects({ projects }: { projects: Project[] }) {
   const featured = projects.filter(p => p.featured);
   const others = projects.filter(p => !p.featured);
 

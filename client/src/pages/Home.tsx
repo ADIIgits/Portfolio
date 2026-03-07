@@ -13,31 +13,22 @@ import { Contact } from "@/components/Contact";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
-  // Fetch all data
-  const { data: profile, isLoading: profileLoading } = useProfile();
-  const { data: technologies, isLoading: techLoading } = useTechnologies();
-  const { data: projects, isLoading: projectsLoading } = useProjects();
-  const { data: experiences, isLoading: expLoading } = useExperiences();
-
-  const isDataLoading = profileLoading || techLoading || projectsLoading || expLoading;
+  // Get all data from hardcoded sources
+  const { data: profile } = useProfile();
+  const { data: technologies } = useTechnologies();
+  const { data: projects } = useProjects();
+  const { data: experiences } = useExperiences();
 
   useEffect(() => {
     // Artificial minimum delay for the cinematic loader effect
     const timer = setTimeout(() => {
-      if (!isDataLoading) setLoading(false);
+      setLoading(false);
     }, 2000);
     
     return () => clearTimeout(timer);
-  }, [isDataLoading]);
+  }, []);
 
-  // Handle immediate resolution if data fetches after minimum delay
-  useEffect(() => {
-    if (!isDataLoading && !loading) {
-      setLoading(false);
-    }
-  }, [isDataLoading, loading]);
-
-  if (loading || isDataLoading) {
+  if (loading) {
     return (
       <AnimatePresence>
         <Loader key="loader" />
@@ -45,7 +36,7 @@ export default function Home() {
     );
   }
 
-  // Fallbacks if data somehow fails silently
+  // Fallbacks if data somehow fails
   if (!profile || !technologies || !projects || !experiences) {
     return <div className="min-h-screen flex items-center justify-center text-white/50">Error loading portfolio data.</div>;
   }

@@ -1,8 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ProfileResponse } from "@shared/routes";
+import type { Profile } from "@/types";
 
 interface NavbarProps {
-  profile?: ProfileResponse;
+  profile?: Profile;
 }
 
 export function Navbar({ profile }: NavbarProps) {

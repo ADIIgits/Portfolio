@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import { ProfileResponse } from "@shared/routes";
+import type { Profile } from "@/types";
 
 interface HeroProps {
-  profile: ProfileResponse;
+  profile: Profile;
 }
 
 export function Hero({ profile }: HeroProps) {

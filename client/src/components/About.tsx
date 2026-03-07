@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ProfileResponse } from "@shared/routes";
+import type { Profile } from "@/types";
 
-export function About({ profile }: { profile: ProfileResponse }) {
+export function About({ profile }: { profile: Profile }) {
   return (
     <section id="about" className="py-32 px-4 sm:px-8 lg:px-16 relative">
       <div className="max-w-5xl mx-auto">

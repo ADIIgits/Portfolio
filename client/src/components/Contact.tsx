@@ -1,53 +1,82 @@
 import { motion } from "framer-motion";
-import { Mail, ArrowUpRight } from "lucide-react";
-import { ProfileResponse } from "@shared/routes";
+import { Mail, Github, Linkedin } from "lucide-react";
+import type { Profile } from "@/types";
 
-export function Contact({ profile }: { profile: ProfileResponse }) {
+export function Contact({ profile }: { profile: Profile }) {
+  const socialLinks = profile.socialLinks as Record<string, string>;
+
   return (
-    <section id="contact" className="py-32 px-4 sm:px-8 lg:px-16 min-h-[80vh] flex flex-col justify-center">
-      <div className="max-w-3xl mx-auto text-center">
+    <section id="contact" className="py-32 px-4 sm:px-8 lg:px-16 relative">
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass p-12 sm:p-20 rounded-[3rem] relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent pointer-events-none" />
-          
-          <h2 className="text-sm text-accent font-mono tracking-[0.3em] uppercase mb-6">
-            05. What's Next?
-          </h2>
-          <h3 className="text-4xl sm:text-6xl font-bold mb-8 text-glow">
-            Get In Touch
-          </h3>
-          <p className="text-lg text-white/60 font-light mb-12 max-w-xl mx-auto">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-          </p>
-          
-          <a 
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-3 px-8 py-5 bg-white text-black rounded-full font-medium text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)]"
-          >
-            <Mail size={20} />
-            Say Hello
-          </a>
-        </motion.div>
-
-        <motion.footer 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-24 text-sm font-mono text-white/30 flex flex-col items-center gap-4"
-        >
-          <div className="flex gap-6">
-            {Object.entries(profile.socialLinks as Record<string, string>).map(([network, url]) => (
-              <a key={network} href={url} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors flex items-center gap-1 capitalize">
-                {network} <ArrowUpRight size={12} />
-              </a>
-            ))}
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-5xl font-bold mb-6 flex items-center justify-center gap-4">
+              <span className="text-white/20 font-mono text-xl sm:text-2xl">05.</span>
+              Get In Touch
+            </h2>
+            <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12">
+              I'm always interested in hearing about new opportunities and collaborations. Feel free to reach out!
+            </p>
           </div>
-          <p>Designed & Built by {profile.name}</p>
-        </motion.footer>
+
+          <div className="glass p-8 sm:p-12 rounded-[2rem] flex flex-col sm:flex-row items-center justify-between gap-8">
+            <div className="flex-1 space-y-4">
+              <h3 className="text-2xl font-bold mb-6">Let's talk</h3>
+              
+              <a 
+                href={`mailto:${profile.email}`}
+                className="flex items-center gap-4 text-lg hover:text-accent transition-colors group"
+              >
+                <div className="p-3 bg-white/5 rounded-full group-hover:bg-accent/20 transition-colors">
+                  <Mail size={24} />
+                </div>
+                <span className="break-all">{profile.email}</span>
+              </a>
+            </div>
+
+            <div className="flex-1 space-y-4">
+              <h3 className="text-2xl font-bold mb-6">Follow</h3>
+              <div className="flex items-center gap-4">
+                {socialLinks?.github && (
+                  <a 
+                    href={socialLinks.github} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="p-4 bg-white/5 rounded-full hover:bg-accent/20 transition-colors group"
+                  >
+                    <Github size={24} className="group-hover:text-accent transition-colors" />
+                  </a>
+                )}
+                {socialLinks?.linkedin && (
+                  <a 
+                    href={socialLinks.linkedin} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="p-4 bg-white/5 rounded-full hover:bg-accent/20 transition-colors group"
+                  >
+                    <Linkedin size={24} className="group-hover:text-accent transition-colors" />
+                  </a>
+                )}
+                {socialLinks?.twitter && (
+                  <a 
+                    href={socialLinks.twitter} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="p-4 bg-white/5 rounded-full hover:bg-accent/20 transition-colors group"
+                  >
+                    <svg className="w-6 h-6 group-hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7z"/>
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
