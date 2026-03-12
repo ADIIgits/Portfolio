@@ -35,3 +35,57 @@ export interface Experience {
   endDate: string;
   description: string;
 }
+
+export interface EducationItem {
+  id: number;
+  institution: string;
+  location?: string;
+  degree: string;
+  cgpa?: string;
+  percentage?: string;
+  start: string;
+  end: string;
+  highlights?: string[];
+}
+
+export interface Certificate {
+  id: number;
+  title: string;
+  issuer: string;
+  category: string;
+  date: string;
+  image: string;
+  link: string;
+}
+
+export interface CPPlatform {
+  id: number;
+  name: string;
+  username: string;
+  stats: string;
+  rating: string;
+  rank: string;
+  link: string;
+}
+
+export interface CPAchievement {
+  id: number;
+  title: string;
+  description: string;
+  year: string;
+}
+
+export interface CPHackathon {
+  id: number;
+  name: string;
+  role: string;
+  result: string;
+  year: string;
+  image: string;
+}
+
+export interface CompetitiveProgramming {
+  platforms: CPPlatform[];
+  achievements: CPAchievement[];
+  hackathons: CPHackathon[];
+}

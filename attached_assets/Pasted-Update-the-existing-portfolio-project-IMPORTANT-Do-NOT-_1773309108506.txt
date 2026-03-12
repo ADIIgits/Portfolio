@@ -1,0 +1,133 @@
+Update the existing portfolio project.
+
+IMPORTANT:
+Do NOT redesign the website. Keep the current cinematic Apple-style UI exactly the same (colors, typography, layout, animations, glassmorphism, and spacing). Only extend the content by adding new sections.
+
+The project is frontend-only and uses hardcoded structured objects instead of a database. Continue using this architecture.
+
+All new content must come from structured objects in the data layer (for example inside src/data/).
+
+Use object-based access like:
+project.title
+certificate.name
+education.institution
+cp.platform
+
+Do NOT add a backend or database.
+
+---
+
+Add the following NEW sections:
+
+1. Competitive Programming / Hackathons
+
+Create a new section that highlights competitive programming activity.
+
+Content should come from a structured object like:
+
+competitiveProgramming = {
+platforms: [
+{ name: "LeetCode", username: "", stats: "", link: "" },
+{ name: "HackerRank", username: "", stats: "", link: "" },
+{ name: "Kaggle", username: "", stats: "", link: "" }
+],
+achievements: [
+{ title: "", description: "", year: "" }
+],
+hackathons: [
+{ name: "", role: "", result: "", year: "", image: "" }
+]
+}
+
+UI suggestions:
+• Platform cards with icons
+• Stats / ranking display
+• Optional hackathon images
+• Keep the same dark card style used in projects
+
+---
+
+2. Certificates Section
+
+Add a certificates section that displays certifications as cards.
+
+Data structure example:
+
+certificates = [
+{
+title: "",
+issuer: "",
+category: "",
+date: "",
+image: "",
+link: ""
+}
+]
+
+Display them as animated cards with:
+• certificate preview image
+• course title
+• issuing organization
+• completion date
+
+Reuse the same card styling and hover animations used in the Projects section.
+
+---
+
+3. Education Section
+
+Add an education timeline/card section.
+
+Data structure example:
+
+education = [
+{
+institution: "Lovely Professional University",
+location: "Punjab, India",
+degree: "B.Tech Computer Science",
+cgpa: "",
+start: "",
+end: "",
+highlights: []
+},
+{
+institution: "St Theresa's Convent School",
+degree: "Intermediate",
+percentage: "",
+start: "",
+end: ""
+},
+{
+institution: "Delhi Public School",
+degree: "Matriculation",
+percentage: "",
+start: "",
+end: ""
+}
+]
+
+UI design:
+• Use stacked cards or vertical timeline
+• Maintain the same dark theme card design
+• Animate cards on scroll using Framer Motion
+
+---
+
+Implementation Requirements
+
+• Store all new data in src/data/ files
+• Components should map over objects instead of hardcoding content
+• Reuse existing card components where possible
+• Maintain consistent spacing and animation with the rest of the site
+• Sections should integrate naturally into the existing page layout
+
+---
+
+Final goal
+
+Extend the portfolio with:
+• Competitive Programming / Hackathons
+• Certificates
+• Education
+
+while preserving the exact visual style and keeping the project frontend-only with structured object-based data.
