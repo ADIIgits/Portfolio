@@ -1,14 +1,18 @@
 export const profile = {
   id: 1,
-  name: "Alex Developer",
-  title: "Full Stack Engineer",
-  tagline: "Building digital experiences with cinematic precision.",
-  about: "I am a passionate software engineer who bridges the gap between design and engineering. I specialize in building immersive, high-performance web applications using modern web technologies.",
-  email: "hello@alexdeveloper.com",
+  name: "Aditya Sharma",
+  title: "Backend & Full Stack Developer",
+  tagline: "DSA-driven developer building scalable web applications.",
+
+  about: "Computer Science undergraduate at Lovely Professional University with strong interest in backend engineering and system design. I actively practice Data Structures and Algorithms and enjoy building scalable web applications using the MERN stack. My focus is on writing efficient code, solving algorithmic problems, and developing production-ready systems.",
+
+  email: "adityalpu27@gmail.com",
+
   socialLinks: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com"
+    github: "https://github.com/ADIIgits",
+    linkedin: "https://www.linkedin.com/in/adityasharma2710/",
+    twitter: "https://x.com/adityashrama_ai"
   },
-  resumeUrl: null,
+
+  resumeUrl: "https://drive.google.com/file/d/14Uwk72TVVR_5xp8fv2YrcbcUCUuS-XN_/view?usp=sharing",
 };

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Trophy, ExternalLink, Star } from "lucide-react";
+import { Trophy, ExternalLink } from "lucide-react";
 import type { CompetitiveProgramming as CPType } from "@/types";
 
 const platformColors: Record<string, string> = {
-  LeetCode: "text-yellow-400",
-  HackerRank: "text-green-400",
-  Codeforces: "text-blue-400",
-  Kaggle: "text-cyan-400",
+  LeetCode: "text-yellow-500 dark:text-yellow-400",
+  HackerRank: "text-green-600 dark:text-green-400",
+  Codeforces: "text-blue-600 dark:text-blue-400",
+  Kaggle: "text-cyan-600 dark:text-cyan-400",
 };
 
 const platformBg: Record<string, string> = {
@@ -27,7 +27,7 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
   };
 
   return (
-    <section id="competitive" className="py-32 px-4 sm:px-8 lg:px-16 border-t border-white/5">
+    <section id="competitive" className="py-32 px-4 sm:px-8 lg:px-16 border-t border-foreground/5">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -35,7 +35,7 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
           viewport={{ once: true }}
           className="text-3xl sm:text-5xl font-bold mb-20 flex items-center gap-4"
         >
-          <span className="text-white/20 font-mono text-xl sm:text-2xl">06.</span>
+          <span className="text-foreground/20 font-mono text-xl sm:text-2xl">06.</span>
           Competitive Programming
         </motion.h2>
 
@@ -54,17 +54,17 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
               href={p.link}
               target="_blank"
               rel="noreferrer"
-              className={`glass rounded-[1.5rem] p-6 group hover:-translate-y-1 transition-all duration-300 border ${platformBg[p.name] ?? "border-white/10"}`}
+              className={`glass rounded-[1.5rem] p-6 group hover:-translate-y-1 transition-all duration-300 border ${platformBg[p.name] ?? "border-foreground/10"}`}
             >
               <div className="flex items-start justify-between mb-4">
-                <span className={`text-lg font-bold ${platformColors[p.name] ?? "text-white"}`}>
+                <span className={`text-lg font-bold ${platformColors[p.name] ?? "text-foreground"}`}>
                   {p.name}
                 </span>
-                <ExternalLink size={14} className="text-white/20 group-hover:text-white/60 transition-colors" />
+                <ExternalLink size={14} className="text-foreground/20 group-hover:text-foreground/60 transition-colors" />
               </div>
               <p className="text-2xl font-bold mb-1">{p.rating}</p>
-              <p className="text-sm text-white/40 font-mono mb-3">{p.rank}</p>
-              <p className="text-xs text-white/30">{p.stats}</p>
+              <p className="text-sm text-foreground/40 font-mono mb-3">{p.rank}</p>
+              <p className="text-xs text-foreground/30">{p.stats}</p>
             </motion.a>
           ))}
         </motion.div>
@@ -75,7 +75,7 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-10 text-white/70"
+            className="text-2xl font-bold mb-10 text-foreground/70"
           >
             Hackathons
           </motion.h3>
@@ -89,7 +89,7 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
                 transition={{ delay: idx * 0.1 }}
                 className="glass rounded-[1.5rem] overflow-hidden group"
               >
-                <div className="relative h-40 overflow-hidden bg-white/5">
+                <div className="relative h-40 overflow-hidden bg-foreground/5">
                   <img
                     src={hack.image}
                     alt={hack.name}
@@ -106,8 +106,8 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
                   <h4 className="font-bold text-base mb-1 group-hover:text-accent transition-colors">
                     {hack.name}
                   </h4>
-                  <p className="text-sm text-white/50 mb-2">{hack.role}</p>
-                  <p className="text-xs font-mono text-white/30">{hack.year}</p>
+                  <p className="text-sm text-foreground/50 mb-2">{hack.role}</p>
+                  <p className="text-xs font-mono text-foreground/30">{hack.year}</p>
                 </div>
               </motion.div>
             ))}
@@ -120,7 +120,7 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-10 text-white/70"
+            className="text-2xl font-bold mb-10 text-foreground/70"
           >
             Achievements
           </motion.h3>
@@ -132,7 +132,7 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ delay: idx * 0.08 }}
-                className="glass p-6 sm:p-8 rounded-[1.5rem] flex items-start gap-5 hover:border-white/20 transition-colors"
+                className="glass p-6 sm:p-8 rounded-[1.5rem] flex items-start gap-5 hover:border-foreground/20 transition-colors"
               >
                 <div className="p-3 bg-accent/10 rounded-2xl shrink-0">
                   <Trophy size={20} className="text-accent" />
@@ -140,9 +140,9 @@ export function CompetitiveProgramming({ data }: { data: CPType }) {
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                     <h4 className="font-bold text-base">{ach.title}</h4>
-                    <span className="text-xs font-mono text-white/30 shrink-0">{ach.year}</span>
+                    <span className="text-xs font-mono text-foreground/30 shrink-0">{ach.year}</span>
                   </div>
-                  <p className="text-sm text-white/50 font-light leading-relaxed">{ach.description}</p>
+                  <p className="text-sm text-foreground/50 font-light leading-relaxed">{ach.description}</p>
                 </div>
               </motion.div>
             ))}

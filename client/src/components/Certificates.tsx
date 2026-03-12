@@ -14,8 +14,7 @@ function CertCard({ cert, index }: { cert: Certificate; index: number }) {
       transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="glass rounded-[1.5rem] group hover:-translate-y-1.5 transition-all duration-300 block overflow-hidden"
     >
-      {/* Preview Image */}
-      <div className="relative w-full h-44 overflow-hidden bg-white/5">
+      <div className="relative w-full h-44 overflow-hidden bg-foreground/5">
         <img
           src={cert.image}
           alt={cert.title}
@@ -34,7 +33,6 @@ function CertCard({ cert, index }: { cert: Certificate; index: number }) {
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-6">
         <div className="flex items-start gap-3 mb-3">
           <Award size={18} className="text-accent mt-0.5 shrink-0" />
@@ -42,8 +40,8 @@ function CertCard({ cert, index }: { cert: Certificate; index: number }) {
             {cert.title}
           </h3>
         </div>
-        <p className="text-sm text-white/50 font-light mb-3 line-clamp-1">{cert.issuer}</p>
-        <p className="text-xs font-mono text-white/30 tracking-wider">{cert.date}</p>
+        <p className="text-sm text-foreground/50 font-light mb-3 line-clamp-1">{cert.issuer}</p>
+        <p className="text-xs font-mono text-foreground/30 tracking-wider">{cert.date}</p>
       </div>
     </motion.a>
   );
@@ -51,7 +49,7 @@ function CertCard({ cert, index }: { cert: Certificate; index: number }) {
 
 export function Certificates({ certificates }: { certificates: Certificate[] }) {
   return (
-    <section id="certificates" className="py-32 px-4 sm:px-8 lg:px-16 bg-white/[0.01] border-t border-white/5">
+    <section id="certificates" className="py-32 px-4 sm:px-8 lg:px-16 bg-foreground/[0.01] border-t border-foreground/5">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -59,7 +57,7 @@ export function Certificates({ certificates }: { certificates: Certificate[] }) 
           viewport={{ once: true }}
           className="text-3xl sm:text-5xl font-bold mb-6 flex items-center gap-4"
         >
-          <span className="text-white/20 font-mono text-xl sm:text-2xl">07.</span>
+          <span className="text-foreground/20 font-mono text-xl sm:text-2xl">07.</span>
           Certifications
         </motion.h2>
         <motion.p
@@ -67,7 +65,7 @@ export function Certificates({ certificates }: { certificates: Certificate[] }) 
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-white/40 font-light mb-16 text-lg"
+          className="text-foreground/40 font-light mb-16 text-lg"
         >
           Verified credentials from industry-leading platforms
         </motion.p>
