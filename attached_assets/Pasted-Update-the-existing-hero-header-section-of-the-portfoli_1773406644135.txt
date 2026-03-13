@@ -1,0 +1,87 @@
+Update the existing hero/header section of the portfolio.
+
+IMPORTANT:
+Do NOT redesign the hero section layout. Keep the current typography, spacing, animations, and button layout exactly the same. The text "Aditya Sharma", subtitle, and action buttons must remain in their current position.
+
+Add a **static cinematic background portrait image** to the hero section.
+
+Requirements:
+
+1. Hero Background Image
+
+Add support for a **developer portrait image** placed behind the hero content.
+
+The image will represent the developer (Aditya Sharma) in a cinematic style.
+
+The image should:
+• cover the hero section background
+• feel cinematic and professional
+• act as a visual backdrop without overpowering the text
+
+The actual image URL will be added later, so create a placeholder variable like:
+
+heroImageUrl
+
+Example placeholder:
+
+const heroImageUrl = "YOUR_IMAGE_URL_HERE"
+
+2. Positioning
+
+The hero image should appear behind the content and be positioned so that:
+
+• the developer portrait appears slightly on one side (preferably right side)
+• the text remains clearly visible on the left side
+• the composition feels balanced
+
+Use:
+
+background-size: cover
+background-position: center right
+
+3. Overlay for readability
+
+Add a subtle dark gradient overlay on top of the image so the text remains readable.
+
+Example concept:
+
+background-image:
+linear-gradient(
+rgba(0,0,0,0.6),
+rgba(0,0,0,0.8)
+),
+url(heroImageUrl)
+
+This ensures the portrait image looks cinematic but does not reduce text readability.
+
+4. Responsiveness
+
+Ensure the hero section behaves correctly on all devices:
+
+Desktop:
+• portrait visible on the side
+• text clearly readable
+
+Mobile:
+• image centered
+• text remains readable
+
+5. Performance
+
+The image should load efficiently and not break layout if the URL is not yet provided.
+
+Use a fallback background color if the image is missing.
+
+6. Maintain existing design
+
+Do NOT modify:
+• hero layout
+• typography
+• spacing
+• animations
+• button styling
+
+Only extend the hero section to support a cinematic developer portrait background.
+
+Goal:
+Create a premium cinematic hero section with a developer portrait background while keeping the current Apple-style minimal design intact.

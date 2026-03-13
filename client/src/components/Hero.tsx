@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import type { Profile } from "@/types";
 
+// ── Replace this URL with the developer portrait image when ready ──
+const heroImageUrl = "";
+
 interface HeroProps {
   profile: Profile;
 }
@@ -11,7 +14,36 @@ export function Hero({ profile }: HeroProps) {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-4 sm:px-8 lg:px-16 overflow-hidden">
-      <div className="max-w-5xl mx-auto w-full z-10">
+
+      {/* ── Cinematic portrait background ── */}
+      {heroImageUrl && (
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          {/* Portrait — fades to transparent on the left via CSS mask */}
+          <img
+            src={heroImageUrl}
+            alt=""
+            draggable={false}
+            className="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-right hero-portrait-mask opacity-90 dark:opacity-75"
+          />
+          {/* Subtle veil so text stays crisp over any bright areas */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 22%, transparent 60%)"
+            }}
+          />
+          {/* Bottom page-blend fade */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-52"
+            style={{
+              background: "linear-gradient(to top, hsl(var(--background)) 0%, transparent 100%)"
+            }}
+          />
+        </div>
+      )}
+
+      {/* ── Existing hero content — unchanged ── */}
+      <div className="max-w-5xl mx-auto w-full z-10 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,6 +107,7 @@ export function Hero({ profile }: HeroProps) {
         </motion.div>
       </div>
 
+      {/* ── Scroll indicator — unchanged ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
