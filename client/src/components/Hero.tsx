@@ -19,33 +19,47 @@ export function Hero({ profile }: HeroProps) {
       {heroImageUrl && (
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
 
-          {/* Layer 1 — Sharp portrait (right side, tight mask so it appears early) */}
+          {/* Layer 1 — Sharp portrait, positioned to the right, no masking */}
           <img
             src={heroImageUrl}
             alt=""
             draggable={false}
-            className="absolute inset-0 w-full h-full object-cover object-right hero-portrait-sharp"
+            className="absolute inset-0 w-full h-full object-cover object-right"
           />
 
-          {/* Layer 2 — Blurred copy (left side only, fades out toward centre) */}
-          {/* Creates graduated blur: heavy left → none by 55% */}
+          {/* Layer 2 — Blurred copy, masked to only the narrow boundary zone (~100px).
+              Sits right where the solid area ends so the edge is softened, not smoky. */}
           <img
             src={heroImageUrl}
             alt=""
             draggable={false}
-            className="absolute inset-0 w-full h-full object-cover object-right hero-portrait-blur"
+            className="absolute inset-0 w-full h-full object-cover object-right"
             style={{
-              filter: "blur(14px)",
-              transform: "scale(1.04)", /* prevent blurred edges from bleeding */
+              filter: "blur(12px)",
+              transform: "scale(1.03)",
+              maskImage: `linear-gradient(to right,
+                transparent 0%,
+                transparent 48%,
+                rgba(0,0,0,0.85) 52%,
+                rgba(0,0,0,0.85) 56%,
+                transparent 61%,
+                transparent 100%)`,
+              WebkitMaskImage: `linear-gradient(to right,
+                transparent 0%,
+                transparent 48%,
+                rgba(0,0,0,0.85) 52%,
+                rgba(0,0,0,0.85) 56%,
+                transparent 61%,
+                transparent 100%)`,
             }}
           />
 
-          {/* Layer 3 — Narrow background-colour gradient for the far-left edge */}
-          {/* Keeps text area clean without a long smoky fade */}
+          {/* Layer 3 — Wide solid background, same coverage as original.
+              Solid from 0–52%, then a tight 7% fade (~100px at 1440px) to transparent. */}
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 14%, transparent 48%)"
+              background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 52%, transparent 59%)"
             }}
           />
 
