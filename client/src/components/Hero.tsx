@@ -19,7 +19,7 @@ export function Hero({ profile }: HeroProps) {
       {heroImageUrl && (
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
 
-          {/* Layer 1 — Sharp portrait, positioned to the right, no masking */}
+          {/* Sharp portrait — positioned right, no masking */}
           <img
             src={heroImageUrl}
             alt=""
@@ -27,43 +27,25 @@ export function Hero({ profile }: HeroProps) {
             className="absolute inset-0 w-full h-full object-cover object-right"
           />
 
-          {/* Layer 2 — Blurred copy, masked to only the narrow boundary zone (~100px).
-              Sits right where the solid area ends so the edge is softened, not smoky. */}
-          <img
-            src={heroImageUrl}
-            alt=""
-            draggable={false}
-            className="absolute inset-0 w-full h-full object-cover object-right"
-            style={{
-              filter: "blur(12px)",
-              transform: "scale(1.03)",
-              maskImage: `linear-gradient(to right,
-                transparent 0%,
-                transparent 48%,
-                rgba(0,0,0,0.85) 52%,
-                rgba(0,0,0,0.85) 56%,
-                transparent 61%,
-                transparent 100%)`,
-              WebkitMaskImage: `linear-gradient(to right,
-                transparent 0%,
-                transparent 48%,
-                rgba(0,0,0,0.85) 52%,
-                rgba(0,0,0,0.85) 56%,
-                transparent 61%,
-                transparent 100%)`,
-            }}
-          />
-
-          {/* Layer 3 — Wide solid background, same coverage as original.
-              Solid from 0–52%, then a tight 7% fade (~100px at 1440px) to transparent. */}
+          {/* Smooth cinematic gradient overlay.
+              Solid from 0–50%, then a ~200px cinematic fade to transparent.
+              No masks, no hard edges — pure gradient blend. */}
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 52%, transparent 59%)"
+              background: `linear-gradient(to right,
+                hsl(var(--background)) 0%,
+                hsl(var(--background)) 50%,
+                hsl(var(--background) / 0.88) 56%,
+                hsl(var(--background) / 0.65) 61%,
+                hsl(var(--background) / 0.35) 66%,
+                hsl(var(--background) / 0.1) 71%,
+                transparent 76%
+              )`
             }}
           />
 
-          {/* Layer 4 — Bottom page-blend */}
+          {/* Bottom page-blend */}
           <div
             className="absolute inset-x-0 bottom-0 h-48"
             style={{
