@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Trophy, ExternalLink } from "lucide-react";
 import type { CompetitiveProgramming as CPType } from "@/types";
+import { CinematicSectionBackground } from "@/components/CinematicSectionBackground";
+import { sectionBackgrounds } from "@/data/sectionBackgrounds";
 
 const platformColors: Record<string, string> = {
   LeetCode: "text-yellow-500 dark:text-yellow-400",

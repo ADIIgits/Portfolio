@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 import type { Project } from "@/types";
+import { CinematicSectionBackground } from "@/components/CinematicSectionBackground";
+import { sectionBackgrounds } from "@/data/sectionBackgrounds";
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const ref = useRef<HTMLDivElement>(null);

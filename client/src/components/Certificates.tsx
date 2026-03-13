@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Award } from "lucide-react";
 import type { Certificate } from "@/types";
+import { CinematicSectionBackground } from "@/components/CinematicSectionBackground";
+import { sectionBackgrounds } from "@/data/sectionBackgrounds";
 
 function CertCard({ cert, index }: { cert: Certificate; index: number }) {
   return (

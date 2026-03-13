@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { GraduationCap, MapPin } from "lucide-react";
 import type { EducationItem } from "@/types";
+import { CinematicSectionBackground } from "@/components/CinematicSectionBackground";
+import { sectionBackgrounds } from "@/data/sectionBackgrounds";
 
 export function Education({ education }: { education: EducationItem[] }) {
   return (
