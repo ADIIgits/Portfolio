@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import type { Profile } from "@/types";
 
-// ── Replace this URL with the developer portrait image when ready ──
-const heroImageUrl = "";
+// ── Replace with your portrait image URL ──
+const heroImageUrl = "https://i.pinimg.com/736x/24/84/11/2484110f21890b98d2a492567d817493.jpg";
 
 interface HeroProps {
   profile: Profile;
@@ -17,24 +17,41 @@ export function Hero({ profile }: HeroProps) {
 
       {/* ── Cinematic portrait background ── */}
       {heroImageUrl && (
-        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          {/* Portrait — fades to transparent on the left via CSS mask */}
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+
+          {/* Layer 1 — Sharp portrait (right side, tight mask so it appears early) */}
           <img
             src={heroImageUrl}
             alt=""
             draggable={false}
-            className="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-right hero-portrait-mask opacity-90 dark:opacity-75"
+            className="absolute inset-0 w-full h-full object-cover object-right hero-portrait-sharp"
           />
-          {/* Subtle veil so text stays crisp over any bright areas */}
+
+          {/* Layer 2 — Blurred copy (left side only, fades out toward centre) */}
+          {/* Creates graduated blur: heavy left → none by 55% */}
+          <img
+            src={heroImageUrl}
+            alt=""
+            draggable={false}
+            className="absolute inset-0 w-full h-full object-cover object-right hero-portrait-blur"
+            style={{
+              filter: "blur(14px)",
+              transform: "scale(1.04)", /* prevent blurred edges from bleeding */
+            }}
+          />
+
+          {/* Layer 3 — Narrow background-colour gradient for the far-left edge */}
+          {/* Keeps text area clean without a long smoky fade */}
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 22%, transparent 60%)"
+              background: "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 14%, transparent 48%)"
             }}
           />
-          {/* Bottom page-blend fade */}
+
+          {/* Layer 4 — Bottom page-blend */}
           <div
-            className="absolute inset-x-0 bottom-0 h-52"
+            className="absolute inset-x-0 bottom-0 h-48"
             style={{
               background: "linear-gradient(to top, hsl(var(--background)) 0%, transparent 100%)"
             }}
@@ -42,7 +59,7 @@ export function Hero({ profile }: HeroProps) {
         </div>
       )}
 
-      {/* ── Existing hero content — unchanged ── */}
+      {/* ── Hero content — unchanged ── */}
       <div className="max-w-5xl mx-auto w-full z-10 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
