@@ -92,6 +92,20 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+.glassmorph {
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  background-color: rgba(5, 5, 5, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+html:not(.dark) .glassmorph {
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  background-color: rgba(239, 239, 239, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+} 
 
 html:not(.dark) .glass {
   background-color: rgba(255, 255, 255, 0.68);

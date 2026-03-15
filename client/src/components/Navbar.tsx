@@ -23,7 +23,7 @@ export function Navbar({ profile }: NavbarProps) {
       style={{ opacity, y }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center py-6 px-4"
     >
-      <nav className="glass-panel px-6 py-3 rounded-full flex items-center gap-6">
+      <nav className="glassmorph px-6 py-3 rounded-full flex items-center gap-6">
         <span className="text-sm font-semibold tracking-wider mr-2 text-foreground">
           {profile?.name.split(' ')[0] || "DEV"}
         </span>
