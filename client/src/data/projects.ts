@@ -7,7 +7,7 @@ export const projects = [
     techStack: ["Kotlin", "Android SDK", "Firebase Firestore", "Firebase Auth"],
     githubLink: "https://github.com/ADIIgits/Links.git",
     liveLink: "",
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=2340&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/6f/24/d4/6f24d4ca5b321b43be4b4aa8f8579f53.jpg",
     featured: true
   },
   {
@@ -18,7 +18,7 @@ export const projects = [
     techStack: ["Kotlin", "Android SDK", "Room", "Coroutines", "XML"],
     githubLink: "https://github.com/ADIIgits/VaanilaNote.git",
     liveLink: "",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2340&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/be/8e/21/be8e21635c450078b6c5880c1749d82a.jpg",
     featured: true
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
     techStack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     githubLink: "https://github.com/ADIIgits/BlogPen.git",
     liveLink: "",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2344&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/cd/8e/16/cd8e1658dc26fd4a004ea7cd23165559.jpg",
     featured: true
   },
   {
@@ -40,7 +40,7 @@ export const projects = [
     techStack: ["React", "Tailwind CSS", "JavaScript"],
     githubLink: "https://github.com/ADIIgits/AppleMusicClone.git",
     liveLink: "",
-    image: "https://images.unsplash.com/photo-1511376777868-611b54f68947?q=80&w=2340&auto=format&fit=crop",
+    image: "https://i.pinimg.com/736x/51/6c/71/516c71add2c17487efff3b3354a06600.jpg",
     featured: false
   }
 ];

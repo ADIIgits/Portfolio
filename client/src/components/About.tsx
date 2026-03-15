@@ -28,9 +28,9 @@ export function About({ profile }: { profile: Profile }) {
                 </div>
                 
                 {/* Right: Portrait Image */}
-                <div className="relative h-64 sm:h-80 lg:h-auto min-h-[300px]">
+                <div className="relative h-64 sm:h-80 lg:h-auto min-h-[500px]">
                   <img 
-                    src={profile.imageUrl || "https://i.pinimg.com/736x/24/84/11/2484110f21890b98d2a492567d817493.jpg"} 
+                    src={profile.imageUrl || "https://i.pinimg.com/736x/2e/74/e7/2e74e77c8d797c3f3b991ee2f08d0f66.jpg"} 
                     alt="Portrait" 
                     className="absolute inset-0 w-full h-full object-cover"
                   />

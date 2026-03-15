@@ -48,13 +48,30 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/2 relative min-h-[300px] lg:min-h-full overflow-hidden bg-foreground/5">
+      <div className="w-full lg:w-1/2 relative min-h-[300px] lg:min-h-full overflow-hidden">
         <img
           src={project.image || "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80"}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/80 to-transparent" />
+        {/* Light Mode Gradient Overlay */}
+        <div 
+          className="absolute inset-0 block dark:hidden pointer-events-none"
+        />
+        {/* Dark Mode Gradient Overlay */}
+        <div 
+          className="absolute inset-0 hidden dark:block pointer-events-none"
+          style={{
+            background: `linear-gradient(to right,
+              hsl(var(--background)) 0%,
+              hsl(var(--background)) 10%,
+              hsl(var(--background) / 0.95) 20%,
+              hsl(var(--background) / 0.8) 30%,
+              hsl(var(--background) / 0.5) 40%,
+              transparent 60%
+            )`
+          }}
+        />
       </div>
     </motion.div>
   );
