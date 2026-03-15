@@ -7,6 +7,7 @@ export interface Profile {
   email: string;
   socialLinks: Record<string, string>;
   resumeUrl?: string | null;
+  imageUrl?: string | null;
 }
 
 export interface Technology {

@@ -1,6 +1,39 @@
-node_modules
-dist
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+
+# environment variables
+.env
+.env.*
+
+# macOS files
 .DS_Store
-server/public
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
 vite.config.ts.*
+
+# archives
 *.tar.gz
+*.tgz
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# misc
+coverage/
+.cache/
+.tmp/
+
+# server static build (if generated)
+server/public/

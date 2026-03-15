@@ -3,7 +3,8 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import type { Profile } from "@/types";
 
 // ── Replace with your portrait image URL ──
-const heroImageUrl = "https://i.pinimg.com/736x/24/84/11/2484110f21890b98d2a492567d817493.jpg";
+//https://i.pinimg.com/736x/24/84/11/2484110f21890b98d2a492567d817493.jpg
+const heroImageUrl = "";
 
 interface HeroProps {
   profile: Profile;
@@ -19,7 +20,7 @@ export function Hero({ profile }: HeroProps) {
       {heroImageUrl && (
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
 
-          {/* Sharp portrait — positioned right, no masking */}
+          {/* Sharp portrait — positioned right, perfectly clear like the reference */}
           <img
             src={heroImageUrl}
             alt=""
@@ -28,19 +29,20 @@ export function Hero({ profile }: HeroProps) {
           />
 
           {/* Smooth cinematic gradient overlay.
-              Solid from 0–50%, then a ~200px cinematic fade to transparent.
-              No masks, no hard edges — pure gradient blend. */}
+              A hyper-smooth misty fade that smoothly transitions from solid text background
+              to a fully clear portrait using an exponential curve for a fog-like atmosphere. */}
           <div
             className="absolute inset-0"
             style={{
               background: `linear-gradient(to right,
                 hsl(var(--background)) 0%,
-                hsl(var(--background)) 50%,
-                hsl(var(--background) / 0.88) 56%,
-                hsl(var(--background) / 0.65) 61%,
-                hsl(var(--background) / 0.35) 66%,
-                hsl(var(--background) / 0.1) 71%,
-                transparent 76%
+                hsl(var(--background)) 35%,
+                hsl(var(--background) / 0.98) 55%,
+                hsl(var(--background) / 0.95) 65%,
+                hsl(var(--background) / 0.85) 75%,
+                hsl(var(--background) / 0.80) 85%,
+                hsl(var(--background) / 0.75) 90%,
+                hsl(var(--background) / 0.75) 100%
               )`
             }}
           />
