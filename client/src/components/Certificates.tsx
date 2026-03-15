@@ -20,9 +20,9 @@ function CertCard({ cert, index }: { cert: Certificate; index: number }) {
         <img
           src={cert.image}
           alt={cert.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute inset-0" />
         <div className="absolute top-4 left-4">
           <span className="text-[10px] font-mono uppercase tracking-widest text-accent bg-accent/10 border border-accent/20 px-3 py-1 rounded-full">
             {cert.category}

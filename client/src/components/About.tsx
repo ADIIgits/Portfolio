@@ -19,23 +19,21 @@ export function About({ profile }: { profile: Profile }) {
           <div className="flex flex-col gap-6">
             {/* Top Main Card (Text + Image) */}
             <div className="glass rounded-[2rem] overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Left: Text Content */}
-                <div className="p-8 sm:p-12 text-lg sm:text-lg text-foreground/80 leading-relaxed font-light space-y-6 flex flex-col justify-center">
+              <div className="grid grid-cols-1 lg:grid-cols-7 gap-1 items-center h-full">
+                {/* Left: Text Content (3/5 width) */}
+                <div className="lg:col-span-4 text-lg sm:text-lg text-foreground/80 leading-relaxed font-light space-y-6 flex flex-col justify-center px-10 sm:px-12 py-4">
                   {profile.about.split('\n').map((paragraph, idx) => (
                     <p key={idx}>{paragraph}</p>
                   ))}
                 </div>
                 
-                {/* Right: Portrait Image */}
-                <div className="relative h-64 sm:h-80 lg:h-auto min-h-[500px]">
+                {/* Right: Portrait Image (2/5 width) */}
+                <div className="lg:col-span-3 relative h-64 sm:h-80 lg:h-[500px] w-full rounded-r-2xl overflow-hidden shadow-lg object-center">
                   <img 
                     src={profile.imageUrl || "https://i.pinimg.com/736x/2e/74/e7/2e74e77c8d797c3f3b991ee2f08d0f66.jpg"} 
                     alt="Portrait" 
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  {/* Optional subtle gradient overlay to blend perfectly with the card */}
-                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-transparent to-background/20" />
                 </div>
               </div>
             </div>

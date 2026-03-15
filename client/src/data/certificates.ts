@@ -1,3 +1,9 @@
+import androidcert from '../../public/images/androidcert.png';
+import cloudcert from '../../public/images/cloudcert.png';
+import psbasic from '../../public/images/psbasic.png';
+import psintermediate from '../../public/images/psintermediate.png';
+import javabasic from '../../public/images/javabasic.png';
+
 export const certificates = [
   {
     id: 1,
@@ -5,7 +11,7 @@ export const certificates = [
     issuer: "Android Developer Pro Program",
     category: "Android Development",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?q=80&w=800&auto=format&fit=crop",
+    image: androidcert,
     link: ""
   },
   {
@@ -14,7 +20,7 @@ export const certificates = [
     issuer: "NPTEL",
     category: "Cloud Computing",
     date: "2024",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop",
+    image: cloudcert,
     link: ""
   },
   {
@@ -23,7 +29,7 @@ export const certificates = [
     issuer: "HackerRank",
     category: "Competitive Programming",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    image: psbasic,
     link: "https://hackerrank.com"
   },
   {
@@ -32,7 +38,7 @@ export const certificates = [
     issuer: "HackerRank",
     category: "Competitive Programming",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    image: psintermediate,
     link: "https://hackerrank.com"
   },
   {
@@ -41,7 +47,7 @@ export const certificates = [
     issuer: "HackerRank",
     category: "Programming",
     date: "2025",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    image: javabasic,
     link: "https://hackerrank.com"
   }
 ];

@@ -48,7 +48,7 @@ export function Tech({ technologies }: { technologies: Technology[] }) {
                     variants={item}
                     className="glass px-5 py-3 rounded-2xl flex items-center gap-3 hover:bg-foreground/[0.06] hover:scale-105 transition-all cursor-default"
                   >
-                    <span className="text-xl grayscale opacity-70">{tech.icon}</span>
+                    <span className="text-xl opacity-70">{tech.icon}</span>
                     <span className="font-medium text-sm tracking-wide">{tech.name}</span>
                   </motion.div>
                 ))}
