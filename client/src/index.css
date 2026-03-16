@@ -88,20 +88,21 @@
 .glass {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 8px 32px 0 rgba(104, 104, 231, 0.3); */
 }
 .glassmorph {
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  background-color: rgba(5, 5, 5, 0.35);
+  backdrop-filter: blur(70px);
+  -webkit-backdrop-filter: blur(70px);
+  background-color: rgba(5, 5, 5, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 html:not(.dark) .glassmorph {
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(70px);
+  -webkit-backdrop-filter: blur(70px);
   background-color: rgba(239, 239, 239, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);

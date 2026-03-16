@@ -61,16 +61,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Dark Mode Gradient Overlay */}
         <div 
           className="absolute inset-0 hidden dark:block pointer-events-none"
-          style={{
-            background: `linear-gradient(to right,
-              hsl(var(--background)) 0%,
-              hsl(var(--background)) 10%,
-              hsl(var(--background) / 0.95) 20%,
-              hsl(var(--background) / 0.8) 30%,
-              hsl(var(--background) / 0.5) 40%,
-              transparent 60%
-            )`
-          }}
         />
       </div>
     </motion.div>
